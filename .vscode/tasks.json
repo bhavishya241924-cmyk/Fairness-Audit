@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "1. First Time Setup",
+      "type": "shell",
+      "command": "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; python -m venv venv; .\\venv\\Scripts\\Activate.ps1; python -m pip install --upgrade pip; python -m pip install --only-binary=:all: numpy pandas scikit-learn streamlit plotly matplotlib seaborn joblib; python -m pip install fairlearn reportlab",
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "2. Run App (streamlit run app.py)",
+      "type": "shell",
+      "command": ".\\venv\\Scripts\\Activate.ps1; python -m streamlit run app.py",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "showReuseMessage": false
+      }
+    }
+  ]
+}
