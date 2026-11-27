@@ -206,42 +206,6 @@ reportlab==4.1.0
 
 ---
 
-## 🎓 Viva Questions & Answers
-
-**Q: What is algorithmic fairness?**
-A: Algorithmic fairness means ensuring ML model decisions do not systematically
-disadvantage individuals based on demographic characteristics like age, sex, or race.
-
-**Q: Why can't a model satisfy all fairness metrics simultaneously?**
-A: Because they are mathematically incompatible under certain conditions
-(Chouldechova 2017, Kleinberg et al. 2016). For example, satisfying equalized odds
-simultaneously with predictive parity is impossible unless the base rates are equal.
-
-**Q: What is the difference between pre-, in-, and post-processing mitigation?**
-A: Pre-processing modifies training data; in-processing adds constraints during training;
-post-processing adjusts decisions after the model is trained.
-
-**Q: Why do you use a validation set for post-processing?**
-A: To prevent data leakage. The ThresholdOptimizer must not "see" the test set
-during threshold tuning — the test set is kept for final unbiased evaluation only.
-
-**Q: What is Reweighing?**
-A: A technique that assigns higher sample weights to underrepresented
-(group, label) combinations using the formula: w = P(A)×P(Y) / P(A,Y).
-
-**Q: What is the ExponentiatedGradient?**
-A: A Fairlearn algorithm that solves a Lagrangian relaxation of a constrained
-optimisation problem, iteratively updating penalty multipliers until the fairness
-constraint (e.g., Demographic Parity) is satisfied within tolerance epsilon.
-
-**Q: How do you prevent data leakage in this project?**
-A: (1) The scaler is fit on training data only. (2) Sensitive attributes are separated
-before encoding. (3) ThresholdOptimizer is tuned on the validation set, not the test set.
-(4) All splits use stratification to maintain class distribution.
-
----
-
-## 👨‍💻 Author
 
 B.Tech CSE AI/ML — University Project
 Algorithmic Fairness Audit & Bias Mitigation Toolkit
